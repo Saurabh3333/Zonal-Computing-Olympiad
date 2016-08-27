@@ -11,12 +11,19 @@ int main()
     for(i=0;i<n;i++)
     {
         cin>>t;
+        if(t==0)
+        {
+            c++;
+            continue;
+        }
         if(t<k)
         {
             a[m]=t;
             m++;
         }
     }
+
+    c=c*m;
 
     for(i=0;i<m-1;i++)
     {

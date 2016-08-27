@@ -1,34 +1,29 @@
-#include <iostream>
+#include<iostream>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    long long n,i,j,c,m=0,t;
-    cin>>n;
-    long long a[n];
-    for(i=0;i<n;i++)
-    {
-        cin>>a[i];
-        for(j=0;j<i;j++)
-        {
-            if(a[i]<a[j])
-            {
-                c=a[i];
-                a[i]=a[j];
-                a[j]=c;
-            }
+	long no;
+	cin>>no;
+	long long arr[no];
+	int i,j;
+	long long max = 0;
+	long long rev = 0;
+	for(i=0;i<no;++i)
+	{
+		cin>>arr[i];
+	}
+	sort(arr,arr+no);
+	for(j=0;j<no;++j)
+	{
+		rev=arr[j]*(no-j);
+		if(rev>max)
+			max=rev;
+	}
+	cout<<max;
 
-        }
-    }
+	return 0;
 
-    for(i=0;i<n;i++)
-    {
-        t=a[i]*(n-i);
-        if(t>m)
-            m=t;
-    }
-    cout<<m;
-
-    return 0;
 }
